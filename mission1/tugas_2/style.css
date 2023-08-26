@@ -114,7 +114,7 @@
 }
 
 .new-col .col-child2 {
-    max-width: 100%;
+    max-width: 100%; /* Kolom kanan berukuran 100% sisa dari yang kiri*/
 }
 
 .pict-avatar {
