@@ -91,7 +91,6 @@
 
 .new-row {
     display: flex;
-    /* justify-content: center; */
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -128,6 +127,11 @@
     font-size: 20px;
 }
 
+.add-padding-left {
+    padding-left : 15px;
+    margin-top: 25px;
+}
+
 @media screen and (max-width:800px) {
     .col {
         max-width: 100%;
@@ -138,6 +142,17 @@
         max-width: 100%; 
         flex-basis: 100%;
         text-align: left;
+    }
+    
+    .col-6 {
+        max-width: 100%;
+        flex-basis: 100%;
+    }
+
+    .col-6 .input-group{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
     }
 
 }
