@@ -1,0 +1,39 @@
+[
+    {
+      "id" : 1,
+      "name": "Ponyo Plush Doll",
+      "price": 150000,
+      "image": "./assets/images/ponyo-doll.jpeg"
+    },
+    {
+      "id" : 2,
+      "name": "Kaonashi Figure",
+      "price": 150000,
+      "image": "./assets/images/kaonashi-figure.jpeg"
+    },
+    {
+      "id" : 3,
+      "name": "Soot Sprite Keychain",
+      "price": 75000,
+      "image": "./assets/images/soot-sprite-plush.jpeg"
+    },
+    {
+      "id" : 4,
+      "name": "Totoro Figure LED",
+      "price": 75000,
+      "image": "./assets/images/totoro-figure-led.jpeg"
+    },
+    {
+      "id" : 5,
+      "name": "Casifer LED",
+      "price": 75000,
+      "image": "./assets/images/casifer-led.jpeg"
+    },
+    {
+      "id" : 6,
+      "name": "Totoro Doll",
+      "price": 75000,
+      "image": "./assets/images/totoro-doll.jpeg"
+    }
+  ]
+  
