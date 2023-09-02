@@ -21,6 +21,11 @@
     font-weight: 600;
 }
 
+.align-left {
+  
+  margin: 50x 0 5px 0;
+}
+
 .col{
     padding: 20px;
     border: 2px solid #749551;
