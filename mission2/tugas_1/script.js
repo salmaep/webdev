@@ -108,7 +108,36 @@ class ShoppingCartApp {
                 <p class="cart-tax">Pajak (11%): ${this.formatRupiah(taxAmount)}</p>
                 <p class="cart-payment-total">Total Bayar: ${this.formatRupiah(totalPayment)}</p>
             `;
+
             this.cartOutput.appendChild(totalPriceElement);
+
+            // Menambahkan tombol "Checkout" yang akan menampilkan modal saat ditekan.
+            const checkoutButton = document.createElement("button");
+            checkoutButton.classList.add("btn", "btn-primary");
+            checkoutButton.textContent = "Checkout";
+            checkoutButton.addEventListener("click", () => {
+                this.showCheckoutModal(totalCartPrice, taxAmount, totalPayment);
+            });
+            this.cartOutput.appendChild(checkoutButton);
+        };
+
+        this.showCheckoutModal = (totalCartPrice, taxAmount, totalPayment) => {
+            const modalBody = document.getElementById("checkoutModalBody");
+            modalBody.innerHTML = `
+                <p>Barang yang dibeli:</p>
+                <ul>
+                    ${this.cart.map(item => `<li>${item.name} (${this.formatRupiah(item.price)} x ${item.quantity})</li>`).join('')}
+                </ul>
+                <div style="margin-top : 5px; text-align: end; justify-content: end; align-items: flex-end; font-weight : 600">
+                    <p>Total Harga: ${this.formatRupiah(totalCartPrice)}</p>
+                    <p>Pajak (11%): ${this.formatRupiah(taxAmount)}</p>
+                    <p>Total Bayar: ${this.formatRupiah(totalPayment)}</p>
+                </div>
+            `;
+
+            // Menampilkan modal dengan menggunakan Bootstrap's modal function.
+            const checkoutModal = new bootstrap.Modal(document.getElementById("checkoutModal"));
+            checkoutModal.show();
         };
 
         this.fetchProducts = () => {
