@@ -1,8 +1,8 @@
-// Mendapatkan elemen HTML dengan id "dino" dan menyimpannya dalam variabel 'char'
-const char = document.getElementById("dino")
+// Mendapatkan elemen HTML dengan id "princess" dan menyimpannya dalam variabel 'char'
+const char = document.getElementById("princess")
 
-// Mendapatkan elemen HTML dengan id "cactus" dan menyimpannya dalam variabel 'cactus'
-const cactus = document.getElementById("cactus")
+// Mendapatkan elemen HTML dengan id "monster" dan menyimpannya dalam variabel 'monster'
+const monster = document.getElementById("monster")
 
 // Mendapatkan elemen HTML dengan id "score" dan menyimpannya dalam variabel 'playerScore'
 const playerScore = document.getElementById("score")
@@ -16,9 +16,9 @@ let jumlahScore = () =>{
     playerScore.innerHTML = `Score : ${score}`
 }
 
-// Fungsi 'jump' akan dipanggil ketika pengguna mengklik tombol untuk membuat karakter 'dino' melompat
+// Fungsi 'jump' akan dipanggil ketika pengguna mengklik tombol untuk membuat karakter 'princess' melompat
 function jump() {
-    // Mengecek apakah 'dino' sedang dalam keadaan "animate" atau tidak
+    // Mengecek apakah 'princess' sedang dalam keadaan "animate" atau tidak
     if(char.classList != "animate") {
         // Jika tidak dalam keadaan "animate", tambahkan kelas "animate" untuk menganimasikan loncatan
         char.classList.add("animate")
@@ -35,20 +35,20 @@ function jump() {
     interval = setInterval(jumlahScore, 100)
 }
 
-// Setiap interval tertentu, kode ini akan memeriksa apakah 'dino' bertabrakan dengan 'cactus'
-const hitCactus = setInterval(function(){
-    // Mendapatkan posisi atas ('top') karakter 'dino' dan posisi kiri ('left') 'cactus' dalam pixel
+// Setiap interval tertentu, kode ini akan memeriksa apakah 'princess' bertabrakan dengan 'monster'
+const hitmonster = setInterval(function(){
+    // Mendapatkan posisi atas ('top') karakter 'princess' dan posisi kiri ('left') 'monster' dalam pixel
     const charTop = parseInt(window.getComputedStyle(char).getPropertyValue("top"))
-    const cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"))
+    const monsterLeft = parseInt(window.getComputedStyle(monster).getPropertyValue("left"))
 
-    // Jika 'cactus' berada dalam jarak tertentu dari 'dino' dan kedua elemen bertabrakan
-    if(cactusLeft < 60 && cactusLeft > 0 && charTop >= 60) {
-        // Menghentikan animasi 'cactus' dan menyembunyikannya
-        cactus.style.animation = "none"
-        cactus.style.display = "none"
+    // Jika 'monster' berada dalam jarak tertentu dari 'princess' dan kedua elemen bertabrakan
+    if(monsterLeft < 48 && monsterLeft > 0 && charTop >= 60) {
+        // Menghentikan animasi 'monster' dan menyembunyikannya
+        monster.style.animation = "none"
+        monster.style.display = "none"
         
         // Menampilkan pesan konfirmasi kepada pengguna dan jika mereka setuju, me-refresh halaman untuk bermain lagi
-        if(confirm("Your dino hit the cactus, play again?")) {
+        if(confirm("Your princess hit the monster, play again?")) {
             window.location.reload()
         }
     }
